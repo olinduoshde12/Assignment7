@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        section{
+            position: relative;
+
+        }
+        section>div{
+             height: 300px;
+            width: 300px;
+            box-shadow: 1px 1px 10px 1px black;
+        }
+        section>div:nth-child(1){
+            position: absolute;
+            top: 50px;
+            left: 40px;
+        }
+        section>div:nth-child(1)>h1:nth-child(1){
+            position: absolute;
+            top: 70px;
+            left: 30px;
+            font-size: 40px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 900;
+        }
+        section>div:nth-child(1)>h1:nth-child(2){
+            position: absolute;
+            top: 140px;
+            left: 29px;
+            font-weight: lighter;
+            font-family: 'Open Sans', sans-serif;
+
+        }
+        section>div:nth-child(1)>img{
+            position: absolute;
+            top: 110px;
+            left: 190px;
+            width: 80px;
+        }
+        section>div:nth-child(2){
+            position: absolute;
+            top: 50px;
+            left: 31vw;
+        }
+        section>div:nth-child(2)>h1:nth-child(1){
+            position: absolute;
+            top: 70px;
+            left: 30px;
+            font-size: 40px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 900;
+        }
+        section>div:nth-child(2)>h1:nth-child(2){
+            position: absolute;
+            top: 140px;
+            left: 29px;
+            font-weight: lighter;
+            font-family: 'Open Sans', sans-serif;
+
+        }
+        section>div:nth-child(2)>img{
+            position: absolute;
+            top: 110px;
+            left: 190px;
+            width: 80px;
+        }
+        section>div:nth-child(3){
+            position: absolute;
+            top: 50px;
+            left: 60vw;
+        }
+        section>div:nth-child(3)>h1:nth-child(1){
+            position: absolute;
+            top: 70px;
+            left: 30px;
+            font-size: 40px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 900;
+        }
+        section>div:nth-child(3)>h1:nth-child(2){
+            position: absolute;
+            top: 140px;
+            left: 29px;
+            font-weight: lighter;
+            font-family: 'Open Sans', sans-serif;
+
+        }
+        section>div:nth-child(3)>img{
+            position: absolute;
+            top: 110px;
+            left: 190px;
+            width: 80px;
+        }
+        .container{
+            overflow: auto;
+        }
+        .container>table{
+            position: absolute;
+            top: 60vh;
+            left: 5.5vw;
+            border: 1px solid black;
+        }
+        table{
+            border-collapse: collapse;
+            width: 70%;
+        }
+
+        tbody{
+            font-weight: bold;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 12px;
+            font-size: 20px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        th {
+            background-color: #081145;
+            color: rgb(255, 255, 255);
+            padding: 8px;
+        }
+
+        td {
+            background-color: #ffffff;
+            border-bottom: 1px solid #742b2b;
+            padding: 8px;
+        }
+
+        tr:hover td {
+            background-color: #ddd;
+        }
+        input{
+            position: absolute;
+            top: 49vh;
+            left: 20vw;
+            font-family: 'Open Sans', sans-serif;
+            height: 5vh;
+            width: 40vw;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 7px;
+            color: rgba(0, 0, 0, 0.8);
+            border: none;
+            background-color: #ffefef;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div>
+        <h1>67</h1>
+        <h1>Customers</h1>
+        <img src="assets/picture/icons8-customer.gif" alt="">
+    </div>
+    <div>
+        <h1>200</h1>
+        <h1>Items</h1>
+        <img src="assets/picture/buy.png" alt="">
+    </div>
+    <div>
+        <h1>100</h1>
+        <h1>Orders</h1>
+        <img src="assets/picture/icons8-order.gif" alt="">
+    </div>
+
+</section>
+<input type="text" placeholder="Customer_Id" id="cust_Id" name="id">
+<div class="container">
+    <table id="tabel1">
+        <thead>
+        <tr>
+            <th>Customer_Id</th>
+            <th>Customer_Name</th>
+            <th>Order_Id</th>
+            <th>Order_Count</th>
+        </tr>
+        </thead>
+        <tbody id="tableBody">
+            <tr>
+                <td>C001</td>
+                <td>Kamal</td>
+                <td>O001</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>C002</td>
+                <td>Nimal</td>
+                <td>O002</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>C003</td>
+                <td>Dasun</td>
+                <td>O003</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>C004</td>
+                <td>Malaka</td>
+                <td>O004</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>C001\5</td>
+                <td>Krishan</td>
+                <td>O005</td>
+                <td>30</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

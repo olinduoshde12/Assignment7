@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pos System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/style/pagestyle/style.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li>
+            <a href="#" class="logo">
+                <img src="assets/picture/payment.png" alt="">
+                <span class="nav-item">Pos System</span>
+            </a>
+        </li>
+        <li><a href="#" onclick="loadHtml('dashboard.html')">
+            <i class='bx bxs-home'></i>
+            <span class="nav-item">Home</span>
+        </a></li>
+        <li><a href="#" onclick="loadHtml('customer_form.html')">
+            <i class='bx bxs-user' ></i>
+            <span class="nav-item">Customer</span>
+        </a></li>
+        <li><a href="#" onclick="loadHtml('item.html')">
+            <i class='bx bxs-package'  ></i>
+            <span class="nav-item">Item</span>
+        </a></li>
+        <li><a href="#">
+            <i class='bx bxs-shopping-bags' ></i>
+            <span class="nav-item">Order</span>
+        </a></li>
+        <li><a href="#">
+            <i class='bx bxs-cog' ></i>
+            <span class="nav-item">Setting</span>
+        </a></li>
+        <li><a href="#">
+            <i class='bx bxs-help-circle' ></i>
+            <span class="nav-item">Help</span>
+        </a></li>
+        <li><a href="#" class="log-out">
+            <i class='bx bxs-log-out-circle' ></i>
+            <span class="nav-item">Log-out</span>
+        </a></li>
+    </ul>
+</nav>
+<div id="div1"></div>
+</body>
+<script src="assets/lib/jquery-3.6.4.min.js"></script>
+<script>
+function loadHtml(id){
+    $('#div1').load(id);
+}
+</script>
+</html>

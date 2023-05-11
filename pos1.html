@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="assets/normalize/normalize.css">
+    <style>
+        nav{
+            position: fixed;
+
+        }
+        nav>div:nth-child(1){
+            width: 12vw;
+            height: 100vh;
+            border: 1px solid red;
+            background-color: #6610f2;
+        }
+        #div1{
+            width: 100vw;
+            height: 100vh;
+            background-color: #06ffda;
+        }
+    </style>
+</head>
+<body>
+<nav>
+<div>
+    <button onclick="loadHtml('customer_form.html')">Customer</button>
+</div>
+</nav>
+<div id="div1">
+</div>
+</body>
+<script src="assets/lib/jquery-3.6.4.min.js"></script>
+<script>
+    function loadHtml(id){
+        $('#div1').load(id);
+    }
+</script>
+</html>

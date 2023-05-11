@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="assets/normalize/normalize.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <style>
+
+        .container1{
+            /*height: 70vh;
+            width: 70vw;
+            border: 1px solid red;*/
+            position: relative;
+        }
+        .container2{
+            position: absolute;
+            height: 80vh;
+            width: 97vw;
+            border: 1px solid white;
+            top: 50vh;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: white;
+            border-radius: 2px;
+            box-sizing: border-box;
+            box-shadow: 1px 1px 10px 1px black;
+        }
+        .container2>h1{
+            text-align: center;
+            font-size: 40px;
+            font-family: 'Open Sans', sans-serif;
+            color: #6610f2;
+            text-shadow: 2px 2px 4px #000000
+        }
+        .container2>form{
+            display: grid;
+            justify-content: left;
+            align-items: flex-start;
+            gap: 13px;
+            margin: 30px;
+            font-weight: bolder;
+
+        }
+        label{
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bolder;
+        }
+        input{
+            width: 25vw;
+            border-radius: 7px;
+            height: 4vh;
+            background-color: #ffefef;
+            border: none;
+            color: rgba(0, 0, 0, 0.8);
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .container3{
+            position: relative;
+            left: 30px;
+        }
+        button:nth-child(1){
+            background-color: rgba(6, 255, 93, 0.8);
+            color: rgba(0, 0, 0, 0.8);
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bolder;
+            gap: 12px;
+            transition: transform 0.2s;
+        }
+        button:nth-child(2){
+            background-color: rgba(255, 147, 6, 0.8);
+            color: rgba(0, 0, 0, 0.8);
+            font-size: 16px;
+            font-weight: bolder;
+            font-family: 'Open Sans', sans-serif;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        button:nth-child(3){
+            background-color: rgba(255, 0, 0, 0.8);
+            color: rgba(0, 0, 0, 0.8);
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif;
+            padding: 10px 20px;
+            font-weight: bolder;
+            border-radius: 5px;
+            gap: 12px;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+        .table-container {
+            position: relative;
+            margin: 0 auto;
+            width: 60%;
+            top: -50vh;
+            left: 16vw;
+            height: 42vh;
+            overflow: auto;
+            border: 1px solid black;
+        }
+
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        tbody{
+           font-weight: bold;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 12px;
+            font-size: 20px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        th {
+            background-color: #081145;
+            color: rgb(255, 255, 255);
+            padding: 8px;
+        }
+
+        td {
+            background-color: #9ffaff;
+            border-bottom: 1px solid #742b2b;
+            padding: 8px;
+        }
+
+        tr:hover td {
+            background-color: #ddd;
+        }
+
+        @media screen and (max-width: 768px) {
+         main {
+             flex-direction: column;
+         }
+         section {
+             flex-basis: 100%;
+         }
+     }
+
+
+    </style>
+
+</head>
+<body>
+<div class="container1">
+    <div class="container2">
+            <h1>Customer Form</h1>
+        <hr>
+        <form name="sample">
+            <label>Customer_Id</label>
+            <input type="text" placeholder="Customer_Id" id="cust_Id" name="id">
+
+            <label>Customer_Name</label>
+            <input type="text" placeholder="Customer_Name" id="cust_Name" name="name">
+
+            <label>Customer_Address</label>
+            <input type="text" placeholder="Customer_Address" id="cust_Address" name="address">
+
+            <label>Customer_Salary</label>
+            <input type="text" placeholder="Customer_Salary" id="cust_salary" name="salary">
+        </form>
+        <div class="container3">
+            <button id="btn_save" onclick="addcustomer();">Register</button>
+            <button>Update</button>
+            <button>Cancel</button>
+        </div>
+        <div class="table-container">
+            <table id="tabel1">
+                <thead>
+                <tr>
+                    <th>Customer_Id</th>
+                    <th>Customer_Name</th>
+                    <th>Customer_Address</th>
+                    <th>Customer_Salary</th>
+                </tr>
+                </thead>
+                <tbody id="tableBody">
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<script src="assets/lib/jquery-3.6.4.min.js">
+
+</script>
+<script>
+    function addcustomer() {
+        // Get input field values
+        var id=document.getElementById("cust_Id").value;
+        var name = document.getElementById("cust_Name").value;
+        var address = document.getElementById("cust_Address").value;
+        var salary = document.getElementById("cust_salary").value;
+
+        // Add data to table
+        var table = document.getElementById("tabel1");
+        var row = table.insertRow();
+
+        var idcell=row.insertCell(0);
+        var nameCell = row.insertCell(1);
+        var addresscell = row.insertCell(2);
+        var salarycell = row.insertCell(3);
+
+        idcell.innerHTML=id;
+        nameCell.innerHTML = name;
+        addresscell.innerHTML = address;
+        salarycell.innerHTML = salary;
+
+        var maxHeight = 200; // Set a maximum height for the table body
+        if (tableBody.offsetHeight > maxHeight) {
+            tableBody.style.height = maxHeight + "px";
+            tableBody.style.overflowY = "auto";
+        }
+    }
+
+</script>
+</body>
+</html>
